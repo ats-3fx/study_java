@@ -4,25 +4,26 @@ import java.io.IOException;
 
 public class maze {
     public static void main(String[] args) throws IOException {
-        record Position(int x,int y) {}
-        int [][] map ={
-                {1,1,1,1,1,1},
-                {1,0,1,0,0,1},
-                {1,0,0,0,1,1},
-                {1,0,1,0,0,1},
-                {1,1,1,1,1,1}
+        record Position(int x, int y) {
+        }
+        int[][] map = {
+                {1, 1, 1, 1, 1, 1},
+                {1, 0, 1, 0, 0, 1},
+                {1, 0, 0, 0, 1, 1},
+                {1, 0, 1, 0, 0, 1},
+                {1, 1, 1, 1, 1, 1}
         };
-        var current = new Position(1,1);
-        var goal = new Position(4,3);
-        for(;;){
+        var current = new Position(1, 1);
+        var goal = new Position(4, 1);
+        for (; ; ) {
             //迷路の表示
-            for (int y = 0; y < map.length; y++){
-                for(int x = 0; x < map[y].length; x++){
-                    if(x == current.x() && y == current.y()){
+            for (int y = 0; y < map.length; y++) {
+                for (int x = 0; x < map[y].length; x++) {
+                    if (x == current.x() && y == current.y()) {
                         System.out.print("o");
-                    }else if (map[y][x] == 1){
+                    } else if (map[y][x] == 1) {
                         System.out.print("*");
-                    }else {
+                    } else {
                         System.out.print(".");
                     }
                 }
